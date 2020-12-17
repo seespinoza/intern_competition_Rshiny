@@ -64,8 +64,7 @@ server <- function(input, output, ...) {
     # Create plot
     fig <- plot_ly(locationRSI(), x = ~date, y= ~RSI, type='scatter', 
                    mode = 'lines', name = 'Relative Strenth Index (RSI)') %>%
-      layout(title = 'Total Covid Cases 2020', 
-             xaxis = list(title = 'Date'),
+      layout(xaxis = list(title = 'Date'),
              yaxis = list(title = 'RSI'),
              shapes=createShapes()) %>% 
       add_trace(x = ~date, y = ~total_cases, mode = 'lines', 
